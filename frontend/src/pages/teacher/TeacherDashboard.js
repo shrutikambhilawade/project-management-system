@@ -13,12 +13,12 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import TeacherSideBar from './TeacherSideBar';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Logout from '../Logout'
-import AccountMenu from '../components/AccountMenu';
-import { AppBar, Drawer } from '../components/styles';
+import AccountMenu from '../../components/AccountMenu';
+import { AppBar, Drawer } from '../../components/styles';
 import StudentAttendance from '../admin/studentRelated/StudentAttendance';
 
 import TeacherClassDetails from './TeacherClassDetails';
-import TeacherComplain from './teacher/TeacherComplain';
+import TeacherComplain from './TeacherComplain';
 import TeacherHomePage from './TeacherHomePage';
 import TeacherProfile from './TeacherProfile';
 import TeacherViewStudent from './TeacherViewStudent';
