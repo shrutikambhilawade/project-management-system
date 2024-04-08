@@ -64,7 +64,7 @@ const TeacherHomePage = () => {
                             <Title>
                                 Total Hours
                             </Title>
-                            <Data start={0} end={30} duration={4} suffix="hrs"/>                        </StyledPaper>
+                            <Data start={0} end={numberOfSessions * 1} duration={4} suffix="hrs"/>                        </StyledPaper>
                     </Grid>
                     <Grid item xs={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
