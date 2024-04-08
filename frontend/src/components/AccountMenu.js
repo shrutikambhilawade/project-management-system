@@ -19,7 +19,7 @@ const AccountMenu = () => {
     };
     return (
         <>
-            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+            {/* <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                 <Tooltip title="Account settings">
                     <IconButton
                         onClick={handleClick}
@@ -34,21 +34,21 @@ const AccountMenu = () => {
                         </Avatar>
                     </IconButton>
                 </Tooltip>
-            </Box>
+            </Box> */}
             <Menu
-                anchorEl={anchorEl}
-                id="account-menu"
-                open={open}
-                onClose={handleClose}
-                onClick={handleClose}
-                PaperProps={{
-                    elevation: 0,
-                    sx: styles.styledPaper,
-                }}
-                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                // anchorEl={anchorEl}
+                // id="account-menu"
+                // open={open}
+                // onClose={handleClose}
+                // onClick={handleClose}
+                // PaperProps={{
+                //     elevation: 0,
+                //     sx: styles.styledPaper,
+                // }}
+                // transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                // anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem>
+                {/* <MenuItem>
                     <Avatar />
                     <Link to={`/${currentRole}/profile`}>
                         Profile
@@ -68,7 +68,7 @@ const AccountMenu = () => {
                     <Link to="/logout">
                         Logout
                     </Link>
-                </MenuItem>
+                </MenuItem> */}
             </Menu>
         </>
     );

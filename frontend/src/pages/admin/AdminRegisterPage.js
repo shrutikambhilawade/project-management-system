@@ -2,10 +2,10 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextField, CssBaseline, IconButton, InputAdornment, CircularProgress} from '@mui/material';
+import { Grid, Box, Typography, Paper, TextField, CssBaseline, IconButton, InputAdornment, CircularProgress} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import bgpic from "../../assets/designlogin.jpg"
+import loginimg from "../../assets/loginpage.jpg"
 import { LightPurpleButton } from '../../components/buttonStyles';
 import { registerUser } from '../../redux/userRelated/userHandle';
 import styled from 'styled-components';
@@ -91,12 +91,7 @@ const AdminRegisterPage = () => {
                         <Typography variant="h4" sx={{ mb: 2, color: "#2c2143" }}>
                             Admin Register
                         </Typography>
-                        <Typography variant="h7">
-                            Create your own school by registering as an admin.
-                            <br />
-                            You will be able to add students and faculty and
-                            manage the system.
-                        </Typography>
+                       
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 2 }}>
                             <TextField
                                 margin="normal"
@@ -161,12 +156,12 @@ const AdminRegisterPage = () => {
                                     ),
                                 }}
                             />
-                            <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
+                            {/* <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
                                 <FormControlLabel
                                     control={<Checkbox value="remember" color="primary" />}
                                     label="Remember me"
                                 />
-                            </Grid>
+                            </Grid> */}
                             <LightPurpleButton
                                 type="submit"
                                 fullWidth
@@ -194,7 +189,7 @@ const AdminRegisterPage = () => {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: `url(${bgpic})`,
+                        backgroundImage: `url(${loginimg})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

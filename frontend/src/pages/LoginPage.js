@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextField, CssBaseline, IconButton, InputAdornment, CircularProgress, Backdrop } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import bgpic from "../assets/designlogin.jpg"
+import studentloginimg from "../assets/studentloginimage.jpg";
+import teacherloginimg from "../assets/teacherloginimage.jpg";
+import loginimg from "../assets/loginpage.jpg";
+import homepageimg from '../assets/homepage.jpg';
 import { LightPurpleButton } from '../components/buttonStyles';
 import styled from 'styled-components';
 import { loginUser } from '../redux/userRelated/userHandle';
@@ -73,29 +76,29 @@ const LoginPage = ({ role }) => {
         if (name === 'studentName') setStudentNameError(false);
     };
 
-    const guestModeHandler = () => {
-        const password = "zxc"
+    // const guestModeHandler = () => {
+    //     const password = "zxc"
 
-        if (role === "Admin") {
-            const email = "yogendra@12"
-            const fields = { email, password }
-            setGuestLoader(true)
-            dispatch(loginUser(fields, role))
-        }
-        else if (role === "Student") {
-            const rollNum = "1"
-            const studentName = "Dipesh Awasthi"
-            const fields = { rollNum, studentName, password }
-            setGuestLoader(true)
-            dispatch(loginUser(fields, role))
-        }
-        else if (role === "Teacher") {
-            const email = "tony@12"
-            const fields = { email, password }
-            setGuestLoader(true)
-            dispatch(loginUser(fields, role))
-        }
-    }
+    //     if (role === "Admin") {
+    //         const email = "yogendra@12"
+    //         const fields = { email, password }
+    //         setGuestLoader(true)
+    //         dispatch(loginUser(fields, role))
+    //     }
+    //     else if (role === "Student") {
+    //         const rollNum = "1"
+    //         const studentName = "Dipesh Awasthi"
+    //         const fields = { rollNum, studentName, password }
+    //         setGuestLoader(true)
+    //         dispatch(loginUser(fields, role))
+    //     }
+    //     else if (role === "Teacher") {
+    //         const email = "tony@12"
+    //         const fields = { email, password }
+    //         setGuestLoader(true)
+    //         dispatch(loginUser(fields, role))
+    //     }
+    // }
 
     useEffect(() => {
         if (status === 'success' || currentUser !== null) {
@@ -213,7 +216,7 @@ const LoginPage = ({ role }) => {
                                     ),
                                 }}
                             />
-                            <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
+                            {/* <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
                                 <FormControlLabel
                                     control={<Checkbox value="remember" color="primary" />}
                                     label="Remember me"
@@ -221,7 +224,7 @@ const LoginPage = ({ role }) => {
                                 <StyledLink href="#">
                                     Forgot password?
                                 </StyledLink>
-                            </Grid>
+                            </Grid> */}
                             <LightPurpleButton
                                 type="submit"
                                 fullWidth
@@ -232,14 +235,7 @@ const LoginPage = ({ role }) => {
                                     <CircularProgress size={24} color="inherit" />
                                     : "Login"}
                             </LightPurpleButton>
-                            <Button
-                                fullWidth
-                                onClick={guestModeHandler}
-                                variant="outlined"
-                                sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
-                            >
-                                Login as Guest
-                            </Button>
+                           
                             {role === "Admin" &&
                                 <Grid container>
                                     <Grid>
@@ -255,13 +251,15 @@ const LoginPage = ({ role }) => {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid
+                {
+                    role === "Student" &&
+                    <Grid
                     item
                     xs={false}
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: `url(${bgpic})`,
+                        backgroundImage: `url(${studentloginimg})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -269,6 +267,59 @@ const LoginPage = ({ role }) => {
                         backgroundPosition: 'center',
                     }}
                 />
+                }
+                 {
+                    role === "Teacher" &&
+                    <Grid
+                    item
+                    xs={false}
+                    sm={4}
+                    md={7}
+                    sx={{
+                        backgroundImage: `url(${teacherloginimg})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundColor: (t) =>
+                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                />
+                }
+                 {
+                    role === "Admin" &&
+                    <Grid
+                    item
+                    xs={false}
+                    sm={4}
+                    md={7}
+                    sx={{
+                        backgroundImage: `url(${homepageimg})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundColor: (t) =>
+                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                />
+                }
+                 {
+                    role === "Parent" &&
+                    <Grid
+                    item
+                    xs={false}
+                    sm={4}
+                    md={7}
+                    sx={{
+                        backgroundImage: `url(${loginimg})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundColor: (t) =>
+                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                />
+                }
+                
             </Grid>
             <Backdrop
                 sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}

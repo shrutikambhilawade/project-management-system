@@ -51,7 +51,7 @@ const AdminHomePage = () => {
                             <Title>
                                 Total Classes
                             </Title>
-                            <Data start={0} end={numberOfClasses} duration={5} />
+                            <Data start={0} end={numberOfClasses} duration={2.5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
@@ -69,7 +69,7 @@ const AdminHomePage = () => {
                             <Title>
                                 Fees Collection
                             </Title>
-                            <Data start={0} end={23000} duration={2.5} prefix="$" />                        </StyledPaper>
+                            <Data start={0} end={numberOfStudents*200} duration={2.5} prefix="$" />                        </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
