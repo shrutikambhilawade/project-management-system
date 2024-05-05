@@ -40,7 +40,6 @@ import TeacherDetails from './teacherRelated/TeacherDetails';
 import AddClass from './classRelated/AddClass';
 import ClassDetails from './classRelated/ClassDetails';
 import ShowClasses from './classRelated/ShowClasses';
-import AccountMenu from '../../components/AccountMenu';
 
 const AdminDashboard = () => {
     const [open, setOpen] = useState(false);
@@ -75,7 +74,6 @@ const AdminDashboard = () => {
                         >
                             Admin Dashboard
                         </Typography>
-                        <AccountMenu />
                     </Toolbar>
                 </AppBar>
                 <Drawer variant="permanent" open={open} sx={open ? styles.drawerStyled : styles.hideDrawer}>

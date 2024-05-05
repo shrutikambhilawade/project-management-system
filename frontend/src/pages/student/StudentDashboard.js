@@ -18,7 +18,6 @@ import StudentSubjects from './StudentSubjects';
 import ViewStdAttendance from './ViewStdAttendance';
 import StudentComplain from './StudentComplain';
 import Logout from '../Logout'
-import AccountMenu from '../../components/AccountMenu';
 import { AppBar, Drawer } from '../../components/styles';
 
 const StudentDashboard = () => {
@@ -54,7 +53,6 @@ const StudentDashboard = () => {
                         >
                             Student Dashboard
                         </Typography>
-                        <AccountMenu />
                     </Toolbar>
                 </AppBar>
                 <Drawer variant="permanent" open={open} sx={open ? styles.drawerStyled : styles.hideDrawer}>
