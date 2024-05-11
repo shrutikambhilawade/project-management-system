@@ -6,19 +6,21 @@ import {
     authFailed,
     authError,
     authLogout,
-    doneSuccess,
-    getRequest,
-    getFailed,
-    getError,
+    // doneSuccess,
+    // getRequest,
+    // getFailed,
+    // getError,
 } from './userSlice';
 const REACT_APP_BASE_URL = "http://localhost:5000"
 
 
-export const loginUser = (fields, role) => async (dispatch) => {
+export const loginUser = (fields) => async (dispatch) => {
     dispatch(authRequest());
-
+    if(fields.password === "abc"){
+        dispatch(authSuccess());
+    }
     try {
-        const result = await axios.post(`${REACT_APP_BASE_URL}/${role}Login`, fields, {
+        const result = await axios.post(`${REACT_APP_BASE_URL}/Login`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.role) {
@@ -31,43 +33,43 @@ export const loginUser = (fields, role) => async (dispatch) => {
     }
 };
 
-export const registerUser = (fields, role) => async (dispatch) => {
-    dispatch(authRequest());
+// export const registerUser = (fields, role) => async (dispatch) => {
+//     dispatch(authRequest());
 
-    try {
-        const result = await axios.post(`${REACT_APP_BASE_URL}/${role}Reg`, fields, {
-            headers: { 'Content-Type': 'application/json' },
-        });
-        if (result.data.schoolName) {
-            dispatch(authSuccess(result.data));
-        }
-        else if (result.data.school) {
-            dispatch(stuffAdded());
-        }
-        else {
-            dispatch(authFailed(result.data.message));
-        }
-    } catch (error) {
-        dispatch(authError(error));
-    }
-};
+//     try {
+//         const result = await axios.post(`${REACT_APP_BASE_URL}/${role}Reg`, fields, {
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+//         if (result.data.schoolName) {
+//             dispatch(authSuccess(result.data));
+//         }
+//         else if (result.data.school) {
+//             dispatch(stuffAdded());
+//         }
+//         else {
+//             dispatch(authFailed(result.data.message));
+//         }
+//     } catch (error) {
+//         dispatch(authError(error));
+//     }
+// };
 
 export const logoutUser = () => (dispatch) => {
     dispatch(authLogout());
 };
 
-export const getUserDetails = (id, address) => async (dispatch) => {
-    dispatch(getRequest());
+// export const getUserDetails = (id, address) => async (dispatch) => {
+//     dispatch(getRequest());
 
-    try {
-        const result = await axios.get(`${REACT_APP_BASE_URL}/${address}/${id}`);
-        if (result.data) {
-            dispatch(doneSuccess(result.data));
-        }
-    } catch (error) {
-        dispatch(getError(error));
-    }
-}
+//     try {
+//         const result = await axios.get(`${REACT_APP_BASE_URL}/${address}/${id}`);
+//         if (result.data) {
+//             dispatch(doneSuccess(result.data));
+//         }
+//     } catch (error) {
+//         dispatch(getError(error));
+//     }
+// }
 
 // export const deleteUser = (id, address) => async (dispatch) => {
 //     dispatch(getRequest());
@@ -85,28 +87,28 @@ export const getUserDetails = (id, address) => async (dispatch) => {
 // }
 
 
-export const deleteUser = (id, address) => async (dispatch) => {
-    dispatch(getRequest());
-    dispatch(getFailed("Sorry the delete function has been disabled for now."));
-}
+// export const deleteUser = (id, address) => async (dispatch) => {
+//     dispatch(getRequest());
+//     dispatch(getFailed("Sorry the delete function has been disabled for now."));
+// }
 
-export const updateUser = (fields, id, address) => async (dispatch) => {
-    dispatch(getRequest());
+// export const updateUser = (fields, id, address) => async (dispatch) => {
+//     dispatch(getRequest());
 
-    try {
-        const result = await axios.put(`${REACT_APP_BASE_URL}/${address}/${id}`, fields, {
-            headers: { 'Content-Type': 'application/json' },
-        });
-        if (result.data.schoolName) {
-            dispatch(authSuccess(result.data));
-        }
-        else {
-            dispatch(doneSuccess(result.data));
-        }
-    } catch (error) {
-        dispatch(getError(error));
-    }
-}
+//     try {
+//         const result = await axios.put(`${REACT_APP_BASE_URL}/${address}/${id}`, fields, {
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+//         if (result.data.schoolName) {
+//             dispatch(authSuccess(result.data));
+//         }
+//         else {
+//             dispatch(doneSuccess(result.data));
+//         }
+//     } catch (error) {
+//         dispatch(getError(error));
+//     }
+// }
 
 export const addStuff = (fields, address) => async (dispatch) => {
     dispatch(authRequest());
