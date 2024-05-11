@@ -1,0 +1,95 @@
+.login_page{
+    background-image: url('C:\Users\Public\react\project-management-system\frontend\src\assets\login-bg-1.svg'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+    background-size: auto 90vh; /* Cover the entire container */
+    background-repeat: no-repeat; 
+}
+
+
+.blueButton{
+    color: rgb(58, 58, 231) ;
+    border-radius: 100%; 
+    width: auto;
+    background-color: dodgerblue; 
+}
+
+.main-container img {
+    max-width: 100%; /* Set the maximum width of the image to 50% of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.dashboard-count{
+    background-color: aliceblue;
+    border-width: 5px;
+    border-right: 5px;
+    border-right-color: aqua;
+    background-origin: padding-box;
+
+}
+
+.table-header{
+    background-color:lightcyan;
+}
+
+.pagination {
+    align-items: center;
+}
+
+
+.page-content{
+    width: 95%;
+    background-image: url('C:\Users\Public\react\project-management-system\frontend\src\assets\Oval.svg');
+    background-repeat: no-repeat;
+    float:inline-end;
+    height: auto; 
+}
+
+.dashboard-header{
+    background-image: url('C:\Users\Public\react\project-management-system\frontend\src\assets\Header-bg.svg'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+    background-repeat: no-repeat;
+    width: 95%;
+    height: 150px;
+    float: right;
+   
+}
+
+.page-heading{
+    color: aliceblue;
+    padding-top: 20px;
+    margin: 20px;
+}
+
+.img-opm{
+    vertical-align: middle;
+    align-self: center;
+}
+
+MenuItem{
+    vertical-align: middle;
+}
+
+.sidebar-img1{
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+.sidebar-img2{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.sidebar-img3{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.projectlist-content{
+    border-color: black;
+    border-width: 20px;
+    border-radius: 50%;
+    width: 95%;
+    float: right ;
+    height: auto; 
+}
+
+.sortDropdown{
+    float: right;
+}
+/*#2f6cbb*/
