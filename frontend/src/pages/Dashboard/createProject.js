@@ -1,5 +1,5 @@
 import "../../App.css";
-import {  Button, Dropdown, FormTextArea, Grid,  Segment, TextArea} from 'semantic-ui-react'
+import {  Button, Dropdown, Grid,  Segment, TextArea} from 'semantic-ui-react'
 import { useDispatch } from "react-redux";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,7 +16,6 @@ import { Category, Department, Division, Location, Priority, Reason, Type } from
 // import React, { useEffect, useState } from 'react';
 
 const CreateProject = () => {
-  const [selectedOption, setSelectedOption] = useState('');
   const dispatch = useDispatch();
   const [loader, setLoader] = useState(false)
   const [projectName , setProjectName] = useState('');
@@ -66,6 +65,7 @@ const setSelectedStartDate = (date)=>{
 const setSelectedEndDate = (date)=>{
  setEndDate(date);
 }
+
 
 const handleTestChanger = (event,{value}) => {
   setProjectName(value);
