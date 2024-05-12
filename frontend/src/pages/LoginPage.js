@@ -2,18 +2,12 @@ import "../App.css";
 import { useEffect, useState } from 'react';
 import {  useNavigate } from 'react-router-dom';
 import {  useSelector } from 'react-redux';
-//import {Grid, Input } from "semantic-ui-react";
 import { Button, Form, Grid, Header,  Image,  Segment} from 'semantic-ui-react'
 
 
-// // import studentloginimg from "../assets/studentloginimage.jpg";
-// // import parentloginimg from "../assets/parentloginimage.jpg"
-// // import teacherloginimg from "../assets/teacherloginimage.jpg";
 
 import logo from "../assets/Logo.svg";
-// // import homepageimg from '../assets/homepage.jpg';
-// import { loginUser } from '../redux/userRelated/userHandle';
-// //import Popup from '../components/Popup';
+
 
 
 
@@ -24,16 +18,9 @@ const LoginPage = () => {
 
     const { status, response, error } = useSelector(state => state.user);
 
-    // const [toggle, setToggle] = useState(false)
-    // const [guestLoader, setGuestLoader] = useState(false)
-     //const [loader, setLoader] = useState(false)
-    // const [showPopup, setShowPopup] = useState(false);
-    // const [message, setMessage] = useState("");
+  
 
     const [emailError, setEmailError] = useState(false);
-    //const [passwordError, setPasswordError] = useState(false);
-   
-
 
 
     const handleInputChange = (event) => {
